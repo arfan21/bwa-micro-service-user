@@ -16,7 +16,7 @@ module.exports = async (req, res) => {
     }
 
     const user = await User.findAll(sqlOptions);
-    if (!user || user.length == 0) {
+    if (!user) {
         return res.status(404).json({
             status: "error",
             message: "User not found",
